@@ -1,0 +1,110 @@
+/* Sidebar Styles */
+.sidebar{
+    width: 250px;
+    height: 100vh;
+    background-color: #2c3e50;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    transition: left 0.3s ease;
+    padding-top: 20px;
+    color: white;
+}
+
+.sidebar.active {
+    left: 0; /* Show sidebar when active */
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #34495e;
+    font-size: 24px;
+}
+
+.sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 63px;
+}
+
+.sidebar-nav li {
+    margin: 15px 0;
+}
+
+.sidebar-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    font-size: 18px;
+}
+
+.sidebar-nav li a:hover {
+    background-color: #1abc9c;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 0; /* Initially no margin */
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+    margin-top: 50px; /* Adjust this value based on navbar height */
+
+}
+.content-wrapper {
+    padding: 20px;
+}
+.main-content.active {
+    margin-left: 250px; /* Shift the content when the sidebar is active */
+}
+
+.navbar {
+    background-color: #34495e; /* Adjust the color */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; /* Remove any margin */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar button {
+    font-size: 24px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: #1abc9c;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content.active {
+        margin-left: 200px;
+    }
+}
+.error {
+    color: red !important; /* Make error messages red */
+    font-size: 0.875em;     /* Optional: make the error message smaller */
+}
+
+.is-invalid {
+    border-color: red !important;
+}
+
+.is-valid {
+    border-color: green !important;
+}
